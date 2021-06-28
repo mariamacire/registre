@@ -30,7 +30,6 @@
             </div>
         </div>
 
-
         <script>
            const listEmploye = <?php echo json_encode($employes); ?>;
            let lastScan;
@@ -46,7 +45,7 @@
                    alert('No cameras found');
                }
 
-           }).catch(function(e) {
+           }).catch(function(e){
                console.error(e);
            });
 
@@ -64,7 +63,7 @@
                 let found = false;
                 let currentEmploye;
                 let newDate = new Date();
-                let currentDate = newDate.getDate()+'-'+(newDate.getMonth()+1)+'-'+newDate.getFullYear()+' "à" '+newDate.getHours()+':'+newDate.getMinutes()+':'+newDate.getSeconds()
+                let currentDate = newDate.getDate()+'-'+(newDate.getMonth()+1)+'-'+newDate.getFullYear()+' à '+newDate.getHours()+':'+newDate.getMinutes()+':'+newDate.getSeconds()
                 for(let index = 0; index < listEmploye.length; index++)
                 {
                     if(qrCode.toLowerCase().includes(listEmploye[index].email.toLowerCase()))
@@ -158,8 +157,8 @@
 
            const _scanOperationSuccess = () => {
                 Swal.fire({
-                    title: 'Bonjour/Bonsoir',
-                    text: `Opération effectuée avec succès`,
+                    title: 'Merci',
+                    text: `Votre enregistrement s'est bien effectué`,
                     icon: 'success',
                     confirmButtonText: 'OK'
                 })
